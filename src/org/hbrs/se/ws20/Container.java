@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Container {
     private LinkedList<Member> list = new LinkedList<>();
     private PersistenceStrategy<Member> persistenceStrategy;
-    private MemberView memberView = new MemberView();
 
     private static Container container;
 

@@ -7,7 +7,7 @@ public class Client {
 
     private Container c = Container.getContainerInstance();
 
-    public Client() throws ContainerException, PersistenceException {
+    public void start() throws ContainerException, PersistenceException{
         c.setPersistenceStrategy(new PersistenceStrategyStream<>());
         Scanner sc = new Scanner(System.in);
         System.out.print("> ");
@@ -91,7 +91,6 @@ public class Client {
 
             System.out.print("> ");
         }
-
     }
 
 }
