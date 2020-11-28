@@ -7,7 +7,7 @@ public class Main {
         try {
             Client c = new Client();
         } catch (ContainerException | PersistenceException | IOException e) {
-            e.printStackTrace();
+            System.out.println("> "+e.getMessage());
         }
     }
 

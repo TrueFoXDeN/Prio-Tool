@@ -14,13 +14,16 @@ public class Client {
         c.setPersistenceStrategy(new PersistenceStrategyStream<>());
         Scanner sc = new Scanner(System.in);
         System.out.print("> ");
-        while(sc.hasNext()){
+        while (sc.hasNext()) {
             String cmd = sc.next();
             String args = sc.nextLine().trim();
 
-            switch (cmd){
+            switch (cmd) {
                 case "enter":
-                    if(args.length() != 0) throw new IOException("Wrong number of arguments.");
+                    if (!args.isEmpty()) {
+                        System.out.println("Wrong number of arguments.");
+                        break;
+                    }
                     System.out.println("> Beschreibung: ");
                     String beschreibung = sc.nextLine();
                     System.out.println("> Akzeptanzkriterien mit ; getrennt eingeben:");
@@ -34,38 +37,56 @@ public class Client {
                     int strafe = sc.nextInt();
                     System.out.println("> Risiko:");
                     int risiko = sc.nextInt();
-                    double prio = (double)(mehrwert + strafe)/(double)(aufwand + risiko);
+                    double prio = (double) (mehrwert + strafe) / (double) (aufwand + risiko);
                     Userstory u = new Userstory(beschreibung, kriterien, prio);
                     c.addMember(u);
                     System.out.println("> Userstory erstellt.");
 
                     break;
                 case "store":
-                    if(args.length() != 0) throw new IOException("Wrong number of arguments.");
+                    if (!args.isEmpty()) {
+                        System.out.println("Wrong number of arguments.");
+                        break;
+                    }
                     c.store();
                     break;
                 case "load":
-                    if(args.split(" ").length != 1) throw new IOException("Wrong number of arguments.");
-                    if(args.equals("merge")){
+                    if (args.isEmpty() || args.trim().split(" ").length > 1) {
+                        System.out.println("> Wrong number of arguments.");
+                        break;
+                    }
+                    if (args.equals("merge")) {
                         c.load(0);
-                    }else if(args.equals("force")){
+                    } else if (args.equals("force")) {
                         c.load(1);
+                    } else {
+                        System.out.println("> Wrong argument.");
                     }
                     break;
                 case "dump":
-                    if(args.length() != 0) throw new IOException("Wrong number of arguments.");
+                    if (!args.isEmpty()) {
+                        System.out.println("Wrong number of arguments.");
+                        break;
+                    }
                     MemberView m = new MemberView();
                     m.dump(c.getCurrentList());
                     break;
-                case "exit": if(args.length() != 0) throw new IOException("Wrong number of arguments.");
+                case "exit":
+                    if (!args.isEmpty()) {
+                        System.out.println("Wrong number of arguments.");
+                        break;
+                    }
                     System.exit(0);
                     break;
                 case "help":
+                    if (!args.isEmpty()) {
+                        System.out.println("Wrong number of arguments.");
+                        break;
+                    }
                     System.out.println("enter        Enter a new userstory.");
                     System.out.println("store        Store all current userstorys.");
                     System.out.println("load [mode]  merge/force to load saved userstorys.");
                     System.out.println("exit         Exit the program.");
-
                     break;
                 default:
                     System.out.println("Command not found. Enter help.");
@@ -80,7 +101,7 @@ public class Client {
 
     }
 
-    public void deleteMember(){
+    public void deleteMember() {
 
     }
 }
