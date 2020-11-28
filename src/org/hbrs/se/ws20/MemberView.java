@@ -4,9 +4,11 @@ import java.util.List;
 
 public class MemberView {
     public void dump(List<Member> list){
-        for(Member m : list){
+        list.forEach((Member m) -> {
             System.out.println(m);
-        }
+            System.out.println("--------------");
+        });
+
     }
 
 }
