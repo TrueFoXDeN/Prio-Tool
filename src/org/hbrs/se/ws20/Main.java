@@ -3,10 +3,10 @@ package org.hbrs.se.ws20;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         try {
             Client c = new Client();
-        } catch (ContainerException | PersistenceException | IOException e) {
+        } catch (ContainerException | PersistenceException e) {
             System.out.println("> "+e.getMessage());
         }
     }

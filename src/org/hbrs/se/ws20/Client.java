@@ -1,8 +1,5 @@
 package org.hbrs.se.ws20;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Client {
@@ -10,7 +7,7 @@ public class Client {
 
     private Container c = Container.getContainerInstance();
 
-    public Client() throws ContainerException, PersistenceException, IOException {
+    public Client() throws ContainerException, PersistenceException {
         c.setPersistenceStrategy(new PersistenceStrategyStream<>());
         Scanner sc = new Scanner(System.in);
         System.out.print("> ");
@@ -97,11 +94,4 @@ public class Client {
 
     }
 
-    public void addMember() throws ContainerException {
-
-    }
-
-    public void deleteMember() {
-
-    }
 }
