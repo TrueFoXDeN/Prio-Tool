@@ -62,3 +62,16 @@ von Laurenz Dilba (9037743) und Ron Autenrieb (9037538)
     + Akzeptanzkriterien
         + Firma wird über Bewerbungsrückzug benachrichtigt
         + Bewerbung wird nicht mehr angezeigt
+
+## Test Suite
+
+### Tests
+TestCase No. | Category | Äquivalenzklasse | Input | Output
+--- | --- | --- | --- | --- |
+ |  |  |  | 
+
+
+### Zugehörige Äquivalenzklassen
+Parameter | Äquivalenzklasse | Repräsentant
+--- | --- | ---
+ |  | 
