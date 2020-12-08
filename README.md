@@ -70,13 +70,13 @@ TestCase No. | Category | Äquivalenzklasse | Input | Output
 --- | --- | --- | --- | --- |
 1 | pos | Ä1 | help | enter: Enter a new userstory.<br><br>store: Store all current userstorys.<br><br>load \[mode\]: merge/force to load saved userstorys.<br><br>exit: Exit the program.
 2 | pos | Ä1 | enter | \> Beschreibung:<br><br>\> Akzeptanzkriterien mit ; getrennt eingeben:<br><br> \> Kennzahlen der Priorisierung:<br> \> Mehrwert:<br> \> Aufwand:<br> \> Strafe:<br> \> Risiko:<br> \> Userstory erstellt.
-3 | neg | Ä2 | load | \> Wrong number of arguments.
+3 | neg | Ä2 | load | \> Falsche Anzahl an Argumenten.
 4 | pos | Ä1 | load merge | MERGE CONFLICT<br>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\><br>LOADED<br>Userstory \[0\]:<br>Beschreibung: Das ist eine Beschreibung<br>Akzeptanzkriterien:<br>- k1<br>- k2<br>- k3<br>- k4<br>Priorität: 0.6666666666666666<br>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\><br>CURRENT<br>Userstory \[0\]:<br>Beschreibung: Das ist eine Beschreibung<br>Akzeptanzkriterien:<br>- k1<br>- k2<br>- k3<br>- k4<br>Priorität: 0.6666666666666666<br>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\><br>\> Keep l or c?
 5 | pos | Ä1 | exit | programm beendet
-6 | neg | Ä3 | help 1 | Wrong number of arguments.
-7 | neg | Ä3 | exit merge | Wrong number of arguments.
-8 | neg | Ä4 | > Mehrwert: hallo | Please enter a valid number.
-9 | neg | Ä4 | > Mehrwert: -1 | Please enter a valid number.
+6 | neg | Ä3 | help 1 | Falsche Anzahl an Argumenten.
+7 | neg | Ä3 | exit merge | Falsche Anzahl an Argumenten.
+8 | neg | Ä4 | > Mehrwert: hallo | Bitte gültigen Wert eingeben:
+9 | neg | Ä4 | > Mehrwert: -1 | Bitte gültigen Wert eingeben:
 ### Zugehörige Äquivalenzklassen
 Parameter | Äquivalenzklasse | Repräsentant
 --- | --- | ---
