@@ -68,10 +68,13 @@ von Laurenz Dilba (9037743) und Ron Autenrieb (9037538)
 ### Tests
 TestCase No. | Category | Äquivalenzklasse | Input | Output
 --- | --- | --- | --- | --- |
- |  |  |  | 
-
+1 | pos | Ä1 | help | enter: Enter a new userstory.<br><br>store: Store all current userstorys.<br><br>load \[mode\]: merge/force to load saved userstorys.<br><br>exit: Exit the program.
+2 | pos | Ä1 | enter | \> Beschreibung:<br><br>\> Akzeptanzkriterien mit ; getrennt eingeben:<br><br> \> Kennzahlen der Priorisierung:<br> \> Mehrwert:<br> \> Aufwand:<br> \> Strafe:<br> \> Risiko:<br> \> Userstory erstellt.
+3 | neg | Ä2 | load | \> Wrong number of arguments.
+4 | pos | Ä1 | load merge | MERGE CONFLICT<br>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\><br>LOADED<br>Userstory \[0\]:<br>Beschreibung: Das ist eine Beschreibung<br>Akzeptanzkriterien:<br>- k1<br>- k2<br>- k3<br>- k4<br>Priorität: 0.6666666666666666<br>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\><br>CURRENT<br>Userstory \[0\]:<br>Beschreibung: Das ist eine Beschreibung<br>Akzeptanzkriterien:<br>- k1<br>- k2<br>- k3<br>- k4<br>Priorität: 0.6666666666666666<br>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\><br>\> Keep l or c?
 
 ### Zugehörige Äquivalenzklassen
 Parameter | Äquivalenzklasse | Repräsentant
 --- | --- | ---
- |  | 
+console input | pos_Ä1 | help
+console input | neg_Ä2 | load
