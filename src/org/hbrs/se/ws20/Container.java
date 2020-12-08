@@ -54,12 +54,17 @@ public class Container {
                         System.out.println("Wrong argument. Merge aborted.");
                     }
 
-
                 }
             }
+
         } else if (mode == 1) {
             list = (LinkedList<Member>) persistenceStrategy.load();
         }
+        int maxid = 0;
+        for(Member m : list){
+            if(m.getID() > maxid) maxid = m.getID();
+        }
+        Userstory.idCounter = maxid+1;
 
     }
 
