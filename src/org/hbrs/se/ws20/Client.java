@@ -83,6 +83,7 @@ public class Client {
                     System.out.println("enter        Enter a new userstory.");
                     System.out.println("store        Store all current userstorys.");
                     System.out.println("load [mode]  merge/force to load saved userstorys.");
+                    System.out.println("dump         Prints userstorys.");
                     System.out.println("exit         Exit the program.");
                     break;
                 default:

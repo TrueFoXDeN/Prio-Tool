@@ -1,5 +1,6 @@
 package org.hbrs.se.ws20;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -68,7 +69,6 @@ public class Container {
                 list.add(member);
             } else {
                 throw new ContainerException("Das Member-Objekt mit der ID [" + member.getID() + "] ist bereits vorhanden!");
-
             }
         }
 
@@ -106,6 +106,7 @@ public class Container {
         return "Member (ID = [" + id + "]) not found";
 
     }
+
 
     public void setPersistenceStrategy(PersistenceStrategy<Member> persistenceStrategy) {
         this.persistenceStrategy = persistenceStrategy;
