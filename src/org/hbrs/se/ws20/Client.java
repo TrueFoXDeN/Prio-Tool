@@ -7,7 +7,7 @@ public class Client {
 
     private Container c = Container.getContainerInstance();
 
-    public void start() throws ContainerException, PersistenceException{
+    public void start() throws ContainerException, PersistenceException {
         c.setPersistenceStrategy(new PersistenceStrategyStream<>());
         Scanner sc = new Scanner(System.in);
         System.out.print("> ");
@@ -18,7 +18,7 @@ public class Client {
             switch (cmd) {
                 case "enter":
                     if (!args.isEmpty()) {
-                        System.out.println("Wrong number of arguments.");
+                        System.out.println("Falsche Anzahl an Argumenten.");
                         break;
                     }
                     System.out.println("> Beschreibung: ");
@@ -27,13 +27,13 @@ public class Client {
                     String[] kriterien = sc.nextLine().split(";");
                     System.out.println("> Kennzahlen der Priorisierung:");
                     System.out.println("> Mehrwert:");
-                    int mehrwert = sc.nextInt();
+                    int mehrwert = tryAcceptInt(sc);
                     System.out.println("> Aufwand:");
-                    int aufwand = sc.nextInt();
+                    int aufwand = tryAcceptInt(sc);
                     System.out.println("> Strafe:");
-                    int strafe = sc.nextInt();
+                    int strafe = tryAcceptInt(sc);
                     System.out.println("> Risiko:");
-                    int risiko = sc.nextInt();
+                    int risiko = tryAcceptInt(sc);
                     double prio = (double) (mehrwert + strafe) / (double) (aufwand + risiko);
                     Userstory u = new Userstory(beschreibung, kriterien, prio);
                     c.addMember(u);
@@ -42,14 +42,14 @@ public class Client {
                     break;
                 case "store":
                     if (!args.isEmpty()) {
-                        System.out.println("Wrong number of arguments.");
+                        System.out.println("Falsche Anzahl an Argumenten.");
                         break;
                     }
                     c.store();
                     break;
                 case "load":
                     if (args.isEmpty() || args.trim().split(" ").length > 1) {
-                        System.out.println("> Wrong number of arguments.");
+                        System.out.println("> Falsche Anzahl an Argumenten.");
                         break;
                     }
                     if (args.equals("merge")) {
@@ -57,12 +57,12 @@ public class Client {
                     } else if (args.equals("force")) {
                         c.load(1);
                     } else {
-                        System.out.println("> Wrong argument.");
+                        System.out.println("> Falsches Argument.");
                     }
                     break;
                 case "dump":
                     if (!args.isEmpty()) {
-                        System.out.println("Wrong number of arguments.");
+                        System.out.println("Falsche Anzahl an Argumenten.");
                         break;
                     }
                     MemberView m = new MemberView();
@@ -70,28 +70,48 @@ public class Client {
                     break;
                 case "exit":
                     if (!args.isEmpty()) {
-                        System.out.println("Wrong number of arguments.");
+                        System.out.println("Falsche Anzahl an Argumenten.");
                         break;
                     }
                     System.exit(0);
                     break;
                 case "help":
                     if (!args.isEmpty()) {
-                        System.out.println("Wrong number of arguments.");
+                        System.out.println("Falsche Anzahl an Argumenten.");
                         break;
                     }
-                    System.out.println("enter        Enter a new userstory.");
-                    System.out.println("store        Store all current userstorys.");
-                    System.out.println("load [mode]  merge/force to load saved userstorys.");
-                    System.out.println("dump         Prints userstorys.");
-                    System.out.println("exit         Exit the program.");
+                    System.out.println("enter        Eingabe einer neuen Userstory.");
+                    System.out.println("store        Speichert alle aktiven Userstorys.");
+                    System.out.println("load [mode]  merge/force, um gespeicherte Userstorys zu laden.");
+                    System.out.println("dump         Zeigt alle Userstorys an.");
+                    System.out.println("exit         Beendet das Programm.");
                     break;
                 default:
-                    System.out.println("Command not found. Enter help.");
+                    System.out.println("Kommando nicht gefunden. help eingeben, um alle Kommandos aufzulisten.");
             }
 
             System.out.print("> ");
         }
+    }
+
+    private int tryAcceptInt(Scanner sc) {
+        boolean accepted = false;
+        int a = 0;
+        while (!accepted) {
+            try {
+                a = sc.nextInt();
+                if(a >= 0){
+                    accepted = true;
+                }else{
+                    System.out.println("> Bitte gültigen Wert eingeben:");
+                    sc.nextLine();
+                }
+            } catch (Exception e) {
+                System.out.println("> Bitte gültigen Wert eingeben:");
+                sc.nextLine();
+            }
+        }
+        return a;
     }
 
 }

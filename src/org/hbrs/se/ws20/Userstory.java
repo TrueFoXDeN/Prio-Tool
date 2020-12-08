@@ -17,12 +17,14 @@ public class Userstory implements Member, Serializable {
     }
 
     @Override
-    public String toString(){
-        String s ="Userstory ["+id+"]: \nBeschreibung: "+beschreibung+"\nAkzeptanzkriterien:\n";
-        for(String a : akzeptanzkriterien){
-            s += "- " +a +"\n";
+    public String toString() {
+        String s = "Userstory [" + id + "]: \nBeschreibung: " + beschreibung + "\nAkzeptanzkriterien:\n";
+        if (!(akzeptanzkriterien.length == 1 && akzeptanzkriterien[0].isEmpty())) {
+            for (String a : akzeptanzkriterien) {
+                s += "- " + a + "\n";
+            }
         }
-        s += "Priorität: "+prio;
+        s += "Priorität: " + prio;
         return s;
     }
 
