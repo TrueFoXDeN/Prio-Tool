@@ -24,7 +24,8 @@ public class Userstory implements Member, Serializable {
                 s += "- " + a + "\n";
             }
         }
-        s += "Priorität: " + prio;
+        s += "Priorität: " + prio + "\n";
+        s += "--------------";
         return s;
     }
 
