@@ -1,7 +1,7 @@
-package org.hbrs.se.ws20.ui;
+package org.hbrs.se.ws20.ui.view;
 
-import org.hbrs.se.ws20.al.Member;
-import org.hbrs.se.ws20.al.Userstory;
+import org.hbrs.se.ws20.al.model.Member;
+import org.hbrs.se.ws20.al.entity.Userstory;
 
 import java.util.Comparator;
 import java.util.List;

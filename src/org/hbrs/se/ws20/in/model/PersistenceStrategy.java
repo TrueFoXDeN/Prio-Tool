@@ -1,6 +1,6 @@
-package org.hbrs.se.ws20.in;
+package org.hbrs.se.ws20.in.model;
 
-import org.hbrs.se.ws20.al.PersistenceException;
+import org.hbrs.se.ws20.al.exception.PersistenceException;
 
 import java.util.List;
 

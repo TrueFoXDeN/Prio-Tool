@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.al;
+package org.hbrs.se.ws20.al.exception;
 
 public class PersistenceException extends Exception {
 

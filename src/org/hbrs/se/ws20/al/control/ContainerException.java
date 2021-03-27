@@ -1,7 +1,7 @@
-package org.hbrs.se.ws20.al;
+package org.hbrs.se.ws20.al.control;
 
 public class ContainerException extends Exception{
-    ContainerException(String message){
+    public ContainerException(String message){
         super(message);
     }
 }

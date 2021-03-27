@@ -1,6 +1,7 @@
-package org.hbrs.se.ws20.al;
+package org.hbrs.se.ws20.al.control;
 
-import org.hbrs.se.ws20.ui.Client;
+import org.hbrs.se.ws20.al.exception.PersistenceException;
+import org.hbrs.se.ws20.ui.view.Client;
 
 public class Main {
     public static void main(String[] args)  {
