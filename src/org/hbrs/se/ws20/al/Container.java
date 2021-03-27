@@ -1,6 +1,7 @@
-package org.hbrs.se.ws20;
+package org.hbrs.se.ws20.al;
 
-import java.util.Comparator;
+import org.hbrs.se.ws20.in.PersistenceStrategy;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;

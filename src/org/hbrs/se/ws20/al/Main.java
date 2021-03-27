@@ -1,4 +1,6 @@
-package org.hbrs.se.ws20;
+package org.hbrs.se.ws20.al;
+
+import org.hbrs.se.ws20.ui.Client;
 
 public class Main {
     public static void main(String[] args)  {
@@ -9,5 +11,6 @@ public class Main {
             System.out.println("> "+e.getMessage());
         }
     }
+
 
 }

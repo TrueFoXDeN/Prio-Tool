@@ -1,4 +1,7 @@
-package org.hbrs.se.ws20;
+package org.hbrs.se.ws20.in;
+
+import org.hbrs.se.ws20.al.PersistenceException;
+import org.hbrs.se.ws20.in.PersistenceStrategy;
 
 import java.util.List;
 

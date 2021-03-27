@@ -1,4 +1,6 @@
-package org.hbrs.se.ws20;
+package org.hbrs.se.ws20.al;
+
+import org.hbrs.se.ws20.al.Member;
 
 import java.io.Serializable;
 

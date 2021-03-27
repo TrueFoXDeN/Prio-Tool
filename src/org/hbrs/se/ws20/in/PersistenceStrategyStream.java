@@ -1,7 +1,9 @@
-package org.hbrs.se.ws20;
+package org.hbrs.se.ws20.in;
+
+import org.hbrs.se.ws20.al.PersistenceException;
+import org.hbrs.se.ws20.in.PersistenceStrategy;
 
 import java.io.*;
-import java.util.LinkedList;
 import java.util.List;
 
 public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Member> {

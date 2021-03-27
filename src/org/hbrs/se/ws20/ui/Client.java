@@ -1,4 +1,10 @@
-package org.hbrs.se.ws20;
+package org.hbrs.se.ws20.ui;
+
+import org.hbrs.se.ws20.al.Container;
+import org.hbrs.se.ws20.al.ContainerException;
+import org.hbrs.se.ws20.al.PersistenceException;
+import org.hbrs.se.ws20.al.Userstory;
+import org.hbrs.se.ws20.in.PersistenceStrategyStream;
 
 import java.util.Scanner;
 
