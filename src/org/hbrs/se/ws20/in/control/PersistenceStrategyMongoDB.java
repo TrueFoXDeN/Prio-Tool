@@ -17,13 +17,13 @@ public class PersistenceStrategyMongoDB<Member> implements PersistenceStrategy<M
     }
 
     @Override
-    public void save(List<Member> member) {
+    public void save(List<Member> member, String file) {
         throw new UnsupportedOperationException("Not implemented!");
 
     }
 
     @Override
-    public List<Member> load() {
+    public List<Member> load(String file) {
         throw new UnsupportedOperationException("Not implemented!");
     }
 }

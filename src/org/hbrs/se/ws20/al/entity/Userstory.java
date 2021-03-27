@@ -3,12 +3,14 @@ package org.hbrs.se.ws20.al.entity;
 import org.hbrs.se.ws20.al.model.Member;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 
 public class Userstory implements Member, Serializable {
     String beschreibung;
     String[] akzeptanzkriterien;
     double prio;
     private int id;
+    public static LinkedList<String> akteure = new LinkedList<>();
     public static int idCounter = 0;
 
     public Userstory(String beschreibung, String[] akzeptanzkriterien, double prio) {

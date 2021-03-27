@@ -6,6 +6,6 @@ import org.hbrs.se.ws20.al.exception.PersistenceException;
 public interface Command {
 
     void execute(String args) throws ContainerException, PersistenceException;
-    void undo();
+    void undo() throws ContainerException, PersistenceException;
 
 }

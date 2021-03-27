@@ -28,13 +28,15 @@ public class Container {
     }
 
     public void store() throws PersistenceException {
-        persistenceStrategy.save(list);
+        persistenceStrategy.save(list, "save.alda");
+    }
+    public void storeBackup() throws PersistenceException {
+        persistenceStrategy.save(list, "backup.alda");
     }
 
     public void load(int mode) throws PersistenceException, ContainerException {
-//        System.out.println("Hallo");
         if (mode == 0) {
-            LinkedList<Member> tempList = (LinkedList<Member>) persistenceStrategy.load();
+            LinkedList<Member> tempList = (LinkedList<Member>) persistenceStrategy.load("save.alda");
             for(Member m : tempList){
                 try {
                     addMember(m);
@@ -63,14 +65,22 @@ public class Container {
             }
 
         } else if (mode == 1) {
-            list = (LinkedList<Member>) persistenceStrategy.load();
+            list = (LinkedList<Member>) persistenceStrategy.load("save.alda");
         }
         int maxid = 0;
         for(Member m : list){
             if(m.getID() > maxid) maxid = m.getID();
         }
         Userstory.idCounter = maxid+1;
+    }
+    public void loadBackup() throws PersistenceException, ContainerException {
 
+        list = (LinkedList<Member>) persistenceStrategy.load("backup.alda");
+        int maxid = 0;
+        for(Member m : list){
+            if(m.getID() > maxid) maxid = m.getID();
+        }
+        Userstory.idCounter = maxid+1;
     }
 
     public void addMember(Member member) throws ContainerException {

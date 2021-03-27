@@ -21,9 +21,9 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
     /**
      * Method for saving a list of Member-objects to a disk (HDD)
      */
-    public void save(List<Member> member) throws PersistenceException  {
+    public void save(List<Member> member, String file) throws PersistenceException  {
         try {
-            FileOutputStream fos = new FileOutputStream("save.txt");
+            FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             List l = member;
             oos.writeObject(l);
@@ -38,10 +38,10 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
      * Method for loading a list of Member-objects from a disk (HDD)
      * Some coding examples come for free :-)
      */
-    public List<Member> load() throws PersistenceException  {
+    public List<Member> load(String file) throws PersistenceException  {
 
         try {
-            FileInputStream fis = new FileInputStream("save.txt");
+            FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             try {

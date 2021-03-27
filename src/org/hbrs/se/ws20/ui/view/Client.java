@@ -8,6 +8,7 @@ import org.hbrs.se.ws20.in.control.PersistenceStrategyStream;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Client {
 
@@ -25,19 +26,35 @@ public class Client {
         commands.put("load", new CommandLoad());
         commands.put("store", new CommandStore());
         commands.put("analyze", new CommandAnalyze());
+        commands.put("addElement", new CommandAddElement());
+        commands.put("actors", new CommandActors());
         commands.put("exit", new CommandExit());
+
+        Stack<String> history = new Stack<>();
 
         while (sc.hasNext()) {
             String cmd = sc.next();
             String args = sc.nextLine().trim();
 
-            Command command = commands.get(cmd);
+            if(cmd.equals("undo")){
+                if(!history.empty()){
+                    commands.get(history.pop()).undo();
+                }else{
+                    System.out.println("Nichts zum Rückgängig machen.");
+                }
 
-            if(command != null){
-                command.execute(args);
             }else{
-                System.out.println("Kommando nicht gefunden. help eingeben, um alle Kommandos aufzulisten.");
+                Command command = commands.get(cmd);
+
+                if(command != null){
+                    history.push(cmd);
+                    command.execute(args);
+
+                }else{
+                    System.out.println("Kommando nicht gefunden. help eingeben, um alle Kommandos aufzulisten.");
+                }
             }
+
 
             System.out.print("> ");
         }

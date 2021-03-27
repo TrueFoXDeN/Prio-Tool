@@ -12,10 +12,12 @@ public class CommandLoad implements Command{
             System.out.println("> Falsche Anzahl an Argumenten.");
             return;
         }
+
         if (args.equals("merge")) {
+            c.storeBackup();
             c.load(0);
         } else if (args.equals("force")) {
-
+            c.storeBackup();
             c.load(1);
         } else {
             System.out.println("> Falsches Argument.");
@@ -24,7 +26,7 @@ public class CommandLoad implements Command{
     }
 
     @Override
-    public void undo() {
-
+    public void undo() throws ContainerException, PersistenceException {
+        c.loadBackup();
     }
 }
