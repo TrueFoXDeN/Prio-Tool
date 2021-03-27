@@ -14,7 +14,6 @@ public class Client {
     private Container c = Container.getContainerInstance();
 
     public void start() throws ContainerException, PersistenceException {
-        c.setPersistenceStrategy(new PersistenceStrategyStream<>());
         Scanner sc = new Scanner(System.in);
         System.out.print("> ");
         while (sc.hasNext()) {
