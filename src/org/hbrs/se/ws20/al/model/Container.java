@@ -32,6 +32,7 @@ public class Container {
     }
 
     public void load(int mode) throws PersistenceException, ContainerException {
+//        System.out.println("Hallo");
         if (mode == 0) {
             LinkedList<Member> tempList = (LinkedList<Member>) persistenceStrategy.load();
             for(Member m : tempList){

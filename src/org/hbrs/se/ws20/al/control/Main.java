@@ -12,7 +12,7 @@ public class Main {
             Container.getContainerInstance().setPersistenceStrategy(new PersistenceStrategyStream<>());
             c.start();
         } catch (ContainerException | PersistenceException e) {
-            System.out.println("> "+e.getMessage());
+            System.out.println("> "+e);
         }
     }
 
