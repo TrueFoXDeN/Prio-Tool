@@ -46,7 +46,7 @@ public class CommandEnter implements Command{
         while (!accepted) {
             try {
                 a = sc.nextInt();
-                if(a >= 0){
+                if(a > 0){
                     accepted = true;
                 }else{
                     System.out.println("> Bitte gültigen Wert eingeben:");
