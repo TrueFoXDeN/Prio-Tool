@@ -14,4 +14,11 @@ public class MemberView {
                 .forEach(System.out::println);
     }
 
+    public void dumpStatus(List<Member> list, String status) throws IllegalArgumentException{
+        List<?> t = list;
+        List<Userstory> l = (List<Userstory>) t;
+        l.stream().sorted(Comparator.comparingDouble(Userstory::getPrio))
+                .filter(userstory -> userstory.getStatus() == Userstory.statusWerte.valueOf(status))
+                .forEach(System.out::println);
+    }
 }

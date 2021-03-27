@@ -12,12 +12,15 @@ public class Userstory implements Member, Serializable {
     private int id;
     public static LinkedList<String> akteure = new LinkedList<>();
     public static int idCounter = 0;
+    public enum statusWerte {done, progress, todo}
+    private statusWerte status;
 
     public Userstory(String beschreibung, String[] akzeptanzkriterien, double prio) {
         this.beschreibung = beschreibung;
         this.akzeptanzkriterien = akzeptanzkriterien;
         this.prio = prio;
         id = idCounter++;
+        status = statusWerte.todo;
     }
 
     @Override
@@ -29,6 +32,7 @@ public class Userstory implements Member, Serializable {
             }
         }
         s += "Priorität: " + prio + "\n";
+        s += "Status: " + status +"\n";
         s += "--------------";
         return s;
     }
@@ -60,5 +64,13 @@ public class Userstory implements Member, Serializable {
 
     public void setPrio(double prio) {
         this.prio = prio;
+    }
+
+    public statusWerte getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) throws IllegalArgumentException{
+        this.status = statusWerte.valueOf(status);
     }
 }

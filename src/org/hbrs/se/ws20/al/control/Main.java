@@ -11,7 +11,7 @@ public class Main {
             Client c = new Client();
             Container.getContainerInstance().setPersistenceStrategy(new PersistenceStrategyStream<>());
             c.start();
-        } catch (ContainerException | PersistenceException e) {
+        } catch (ContainerException | PersistenceException  e) {
             System.out.println("> "+e);
         }
     }

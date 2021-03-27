@@ -27,6 +27,7 @@ public class Client {
         commands.put("store", new CommandStore());
         commands.put("analyze", new CommandAnalyze());
         commands.put("addElement", new CommandAddElement());
+        commands.put("status", new CommandStatus());
         commands.put("actors", new CommandActors());
         commands.put("exit", new CommandExit());
 

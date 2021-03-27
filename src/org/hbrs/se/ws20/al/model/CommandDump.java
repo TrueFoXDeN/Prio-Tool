@@ -6,13 +6,28 @@ public class CommandDump implements Command{
     private Container c = Container.getContainerInstance();
     @Override
     public void execute(String args) {
-        if (!args.isEmpty()) {
+        String[] a = args.trim().split(" ");
+
+        if(args.isEmpty()){
+
+
+            MemberView m = new MemberView();
+            m.dump(c.getCurrentList());
+            return;
+        }
+        if (a.length <= 1) {
             System.out.println("Falsche Anzahl an Argumenten.");
             return;
         }
-        MemberView m = new MemberView();
-        m.dump(c.getCurrentList());
-        return;
+        if(a[0].equals("status")){
+            try {
+                MemberView m = new MemberView();
+                m.dumpStatus(c.getCurrentList(), a[1]);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Status "+a[1] +" nicht vorhanden. Verfügbar: {todo, progress, done}");
+            }
+            return;
+        }
     }
 
     @Override
