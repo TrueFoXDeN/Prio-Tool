@@ -58,25 +58,4 @@ public class Client {
             System.out.print("> ");
         }
     }
-
-    private int tryAcceptInt(Scanner sc) {
-        boolean accepted = false;
-        int a = 0;
-        while (!accepted) {
-            try {
-                a = sc.nextInt();
-                if(a >= 0){
-                    accepted = true;
-                }else{
-                    System.out.println("> Bitte gültigen Wert eingeben:");
-                    sc.nextLine();
-                }
-            } catch (Exception e) {
-                System.out.println("> Bitte gültigen Wert eingeben:");
-                sc.nextLine();
-            }
-        }
-        return a;
-    }
-
 }
