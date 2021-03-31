@@ -1,10 +1,8 @@
 package org.hbrs.se.ws20.ui.view;
 
 import org.hbrs.se.ws20.al.model.*;
-import org.hbrs.se.ws20.al.control.ContainerException;
+import org.hbrs.se.ws20.al.exception.ContainerException;
 import org.hbrs.se.ws20.al.exception.PersistenceException;
-import org.hbrs.se.ws20.al.entity.Userstory;
-import org.hbrs.se.ws20.in.control.PersistenceStrategyStream;
 
 import java.util.HashMap;
 import java.util.Scanner;

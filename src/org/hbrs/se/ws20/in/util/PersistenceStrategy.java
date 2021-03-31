@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.in.model;
+package org.hbrs.se.ws20.in.util;
 
 import org.hbrs.se.ws20.al.exception.PersistenceException;
 

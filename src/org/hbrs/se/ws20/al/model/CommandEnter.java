@@ -1,6 +1,6 @@
 package org.hbrs.se.ws20.al.model;
 
-import org.hbrs.se.ws20.al.control.ContainerException;
+import org.hbrs.se.ws20.al.exception.ContainerException;
 import org.hbrs.se.ws20.al.entity.Userstory;
 
 import java.util.Scanner;
