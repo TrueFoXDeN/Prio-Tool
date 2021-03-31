@@ -71,6 +71,11 @@ public class Userstory implements Member, Serializable {
     }
 
     public void setStatus(String status) throws IllegalArgumentException{
-        this.status = statusWerte.valueOf(status);
+
+        try {
+            this.status = statusWerte.valueOf(status);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Status "+status + " existiert nicht.");
+        }
     }
 }
