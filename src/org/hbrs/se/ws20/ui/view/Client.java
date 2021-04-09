@@ -48,7 +48,6 @@ public class Client {
                 if(command != null){
                     history.push(cmd);
                     command.execute(args);
-
                 }else{
                     System.out.println("Kommando nicht gefunden. help eingeben, um alle Kommandos aufzulisten.");
                 }
